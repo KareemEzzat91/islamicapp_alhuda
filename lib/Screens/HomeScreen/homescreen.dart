@@ -15,7 +15,6 @@ class homeScreen extends StatefulWidget {
 }
 class _homeScreenState extends State<homeScreen> {
   int index =0;
-
   @override
   Widget build(BuildContext context) {
     List Screens =[
@@ -80,11 +79,11 @@ class _homeScreenState extends State<homeScreen> {
                 height: 50,
                 fixedWidth: 90,
                 initialValue: 1,
-                children: const {
-                  1: Text('Surah',style: TextStyle(color: Color(0xff8789A3),fontSize: 20,),),
-                  2: Text('Para',style: TextStyle(color: Color(0xff8789A3),fontSize: 20)),
-                  3: Text('Page',style: TextStyle(color: Color(0xff8789A3),fontSize: 20)),
-                  4: Text('Hijb',style: TextStyle(color: Color(0xff8789A3),fontSize: 20)),
+                children: {
+                  1: Text('Surah',style: TextStyle(color: index==0?Colors.white: Color(0xff8789A3),fontSize: 20,),),
+                  2: Text('Para',style: TextStyle(color:index==1?Colors.white: Color(0xff8789A3),fontSize: 20)),
+                  3: Text('Page',style: TextStyle(color:index==2?Colors.white: Color(0xff8789A3),fontSize: 20)),
+                  4: Text('Hijb',style: TextStyle(color:index==3?Colors.white: Color(0xff8789A3),fontSize: 20)),
         
         
                 },
@@ -115,7 +114,7 @@ class _homeScreenState extends State<homeScreen> {
                 onValueChanged: (v) {
                   setState(() {
                     index=v-1;
-        
+
                   });
                 },
               ),
