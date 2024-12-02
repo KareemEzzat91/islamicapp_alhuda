@@ -20,7 +20,7 @@ class SurahBuilder extends StatefulWidget {
 }
 
 class _SurahBuilderState extends State<SurahBuilder> {
-  bool viewFullSurah = true; // للتحكم في العرض (نص كامل أو الآيات بشكل منفصل)
+  bool viewFullSurah = false;
 
   @override
   void initState() {
@@ -29,13 +29,25 @@ class _SurahBuilderState extends State<SurahBuilder> {
   }
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.surah.name),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.swap_horiz),
+            onPressed: () {
+              setState(() {
+                viewFullSurah ? viewFullSurah=false :viewFullSurah=true;
+              });
+            },
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
+        child: viewFullSurah?SingleChildScrollView(
           child: Text.rich(
             TextSpan(
               children: widget.surah.ayahs.map((ayah) {
@@ -48,68 +60,32 @@ class _SurahBuilderState extends State<SurahBuilder> {
                         fontSize: arabicFontSize,
                         fontFamily: arabicFont,
                         color: Colors.black,
+                        height: 2.0,
                       ),
                     ),
-                    // رقم الآية داخل رمز
-                    WidgetSpan(
-                      alignment: PlaceholderAlignment.middle,
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                        padding: const EdgeInsets.all(6.0),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.grey.shade300,
-                        ),
-                        child: Text(
-                          ayah.numberInSurah.toString(),
-                          style: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // رقم الآية
+                  WidgetSpan(child: ArabicSuraNumber(i: ayah.numberInSurah))
                   ],
                 );
               }).toList(),
             ),
             textDirection: TextDirection.rtl,
           ),
-        ),
+        ):
+        fullSurahWithNumbersBuilder(),
       ),
     );
   }
 
 
+
   /// بناء النص الكامل مع إضافة الأرقام بين الآيات
   Widget fullSurahWithNumbersBuilder() {
-    List<Widget> fullSurahWidgets = [];
-    for (var i = 0; i < widget.surah.ayahs.length; i++) {
+   return ListView.builder(
+        itemCount: widget.surah.ayahs.length, itemBuilder: (c, i) {
       final ayah = widget.surah.ayahs[i];
-      fullSurahWidgets.add(
-        Text(
-          ayah.text,
-          textDirection: TextDirection.rtl,
-          style: TextStyle(
-            fontSize: arabicFontSize,
-            fontFamily: arabicFont,
-            color: const Color.fromARGB(196, 0, 0, 0),
-          ),
-        ),
-      );
-
-      // إضافة رقم الآية باستخدام ArabicSuraNumber
-      fullSurahWidgets.add(ArabicSuraNumber(i: i));
-    }
-
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: fullSurahWidgets,
-      ),
-    );
+      return  buildAyahWidget(i, ayah);
+    });
   }
 
   /// بناء واجهة الآيات الفردية
