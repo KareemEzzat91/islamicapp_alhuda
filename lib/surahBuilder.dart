@@ -35,14 +35,15 @@ class _SurahbuilderState extends State<Surahbuilder> {
   Widget build(BuildContext context) {
      String fullsurah = "";
     for  ( final ayah in widget.surah.ayahs ){
-      fullsurah += "${ayah.text}\uFD3E${(ayah.number).toString().toArabicNumbers}\uFD3F" ;
+      fullsurah += "${ayah.text}\uFD3E${(ayah.number+1).toString().toArabicNumbers}\uFD3F" ;
     };
     return Scaffold(
-      appBar: AppBar(title: Text(widget.surah.name),),
-      body: ListView.builder(
-          itemCount: widget.surah.ayahs.length, itemBuilder: (c, i) {
+      appBar: AppBar(leading:  IconButton(icon:const Icon(Icons.view_array_outlined) ,onPressed: (){view?view=false:view=true;setState(() {
+      });},),title: Text(widget.surah.name),),
+      body: ScrollablePositionedList.builder(
+          itemCount:view?1 :widget.surah.ayahs.length, itemBuilder: (c, i) {
         final ayah = widget.surah.ayahs[i];
-        return  BuildAyah(i, ayah);
+      return view? verseBuilder(fullsurah,i+1): BuildAyah(i, ayah);//
       }),
 
     );
@@ -53,7 +54,7 @@ class _SurahbuilderState extends State<Surahbuilder> {
           children: [
         i == 0 && widget.surah.number!=9 ? const RetunBasmala():const Text("")
       ,i==0 && widget.surah.number!=9?verseBuilder (ayah.text.replaceRange(0, 38, ""),ayah.numberInSurah):verseBuilder (ayah.text,ayah.numberInSurah)]);
-  }
+  }// تحت يعض
 
 
   jumbToAyah() {
