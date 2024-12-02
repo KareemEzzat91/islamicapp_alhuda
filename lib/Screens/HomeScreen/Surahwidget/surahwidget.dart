@@ -20,7 +20,7 @@ class surahwidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
           child: GestureDetector(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (c)=>Surahbuilder(surah: Sur[index] ,)));
+              Navigator.push(context, MaterialPageRoute(builder: (c)=>SurahBuilder(surah: Sur[index] ,)));
               // go to surahpage
             },
             child: Row(
