@@ -1,7 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../kcons.dart';
-import '../../../surahBuilder.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islamicapp_alhuda/Screens/HomeScreen/HomeScreencubit/homescreen_cubit.dart';
+import 'package:islamicapp_alhuda/surahpage/SurahModel.dart';
+import '../../../kconst/kcons.dart';
+import '../../../surahpage/surahBuilder.dart';
 
 class surahwidget extends StatelessWidget {
   const surahwidget({super.key});
@@ -16,12 +18,15 @@ class surahwidget extends StatelessWidget {
       itemBuilder: (context, index) {
         final surah = Surahs[index];
 
-        return Padding(
+        return BlocBuilder<HomescreenCubit, HomescreenState>(
+        builder: (context, state) {
+          return Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
           child: GestureDetector(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (c)=>SurahBuilder(surah: Sur[index] ,)));
-              // go to surahpage
+            onTap: ()async{
+         Navigator.push(context, MaterialPageRoute(builder: (c)=>SurahBuilder(surah: Sur[index] ,)));
+
+
             },
             child: Row(
               children: [
@@ -68,6 +73,8 @@ class surahwidget extends StatelessWidget {
             ),
           ),
         );
+  },
+);
       },
       separatorBuilder: (context, index) {
         return const Divider(

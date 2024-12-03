@@ -1,7 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'LoadQuranData.dart';
-import 'SurahModel.dart';
+import '../surahpage/LoadQuranData.dart';
+import '../surahpage/SurahModel.dart';
 
 String arabicFont = "quran";
 double arabicFontSize= 24;
@@ -14,6 +14,7 @@ Future saveSettings ()async{
   prefs.setInt('MushafFontSize', MushafFontSize.toInt());
 
 }
+  String surah ="" ;
 
 Future getSettings ()async{
   try {

@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 import 'SurahModel.dart';
-import 'kcons.dart';
+import '../kconst/kcons.dart';
 
 
 Future<void> loadQuranData() async {

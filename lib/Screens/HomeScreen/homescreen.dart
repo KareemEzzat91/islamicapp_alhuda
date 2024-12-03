@@ -1,10 +1,13 @@
 import 'package:custom_sliding_segmented_control/custom_sliding_segmented_control.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islamicapp_alhuda/Screens/HomeScreen/Hijb/Hijbwidget.dart';
 import 'package:islamicapp_alhuda/Screens/HomeScreen/Pagewidget/Pagewidget.dart';
 import 'package:islamicapp_alhuda/Screens/HomeScreen/Parawidget/Parawidget.dart';
 
+import '../../generated/l10n.dart';
+import 'HomeScreencubit/homescreen_cubit.dart';
 import 'Surahwidget/surahwidget.dart';
 
 class homeScreen extends StatefulWidget {
@@ -18,13 +21,13 @@ class _homeScreenState extends State<homeScreen> {
   @override
   Widget build(BuildContext context) {
     List Screens =[
-      surahwidget (),
-      Parawidget(),
-      Pagewidget(),
-      hijbwidget(),
+      const surahwidget (),
+      const Parawidget(),
+      const Pagewidget(),
+      const hijbwidget(),
     ];
     return Scaffold(
-      appBar:AppBar( backgroundColor: Colors.white,leading:const Icon(Icons.menu,color:Colors.grey ,) ,title: Text("AL-HUDA",style: TextStyle(color:Color(0xff672CBC),fontWeight: FontWeight.bold ),),actions: [Icon(Icons.search)],),
+      appBar:AppBar( backgroundColor: Colors.white,leading:const Icon(Icons.menu,color:Colors.grey ,) ,title: Text(S.of(context).ALHUDA,style: TextStyle(color:Color(0xff672CBC),fontWeight: FontWeight.bold ,fontFamily: "me_quran"),),actions: [Icon(Icons.search)],),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
          child: Padding(
@@ -49,23 +52,31 @@ class _homeScreenState extends State<homeScreen> {
                 child:  Stack(
                   children: [
                     Positioned(top: 60,right: 0,child: ClipRect(child: Image.asset("assets/images/Group.png",scale: 0.78,),)),
-                    const Positioned(left: 10 ,child: Column(
+                     Positioned(left: 10 ,child:
+                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
                           padding: EdgeInsets.all(20.0),
                           child: Row(
                             children: [
-        
-                              Icon(Icons.menu_book_outlined,color: Colors.white,size: 20,),SizedBox(width: 10,),
-                              Text("Last Read",style: TextStyle(fontSize: 20,color: Colors.white),),
+
+                              Icon(Icons.menu_book_outlined,color: Colors.white,size: 20,textDirection: TextDirection.ltr,),SizedBox(width: 10,),
+                              Text(S.of(context).LastRead,style: TextStyle(fontSize: 20,color: Colors.white,fontFamily: "me_quran"),),
                             ],
                           ),
-        
                         ),
-                        Text("Al-Fatiah",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 30),),
-                        Text("Ayah No: 1",style: TextStyle(color: Colors.white54,fontSize: 20),)
-        
+                         BlocBuilder<HomescreenCubit,HomescreenState>(
+                           builder: (context,state ) {
+                             final bloc=context.read<HomescreenCubit>();
+                             return Column(children: [
+                               Text(bloc.surahname,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 28,fontFamily: "me_quran"),),
+                               Text("Surah No: ${bloc.Ayahnum}",style: TextStyle(color: Colors.white54,fontSize: 18,fontFamily: "me_quran"),)],);
+
+                           }
+                         )
+
+
                       ],
                     )),
                   ],
@@ -80,10 +91,10 @@ class _homeScreenState extends State<homeScreen> {
                 fixedWidth: 90,
                 initialValue: 1,
                 children: {
-                  1: Text('Surah',style: TextStyle(color: index==0?Colors.white: Color(0xff8789A3),fontSize: 20,),),
-                  2: Text('Para',style: TextStyle(color:index==1?Colors.white: Color(0xff8789A3),fontSize: 20)),
-                  3: Text('Page',style: TextStyle(color:index==2?Colors.white: Color(0xff8789A3),fontSize: 20)),
-                  4: Text('Hijb',style: TextStyle(color:index==3?Colors.white: Color(0xff8789A3),fontSize: 20)),
+                  1: Text(S.of(context).Surah,style: TextStyle(color: index==0?Colors.white: Color(0xff8789A3),fontSize: 20,fontFamily: "me_quran"),),
+                  2: Text(S.of(context).Para,style: TextStyle(color:index==1?Colors.white: Color(0xff8789A3),fontSize: 20,fontFamily: "me_quran")),
+                  3: Text(S.of(context).Page,style: TextStyle(color:index==2?Colors.white: Color(0xff8789A3),fontSize: 20,fontFamily: "me_quran")),
+                  4: Text(S.of(context).Hijn,style: TextStyle(color:index==3?Colors.white: Color(0xff8789A3),fontSize: 20,fontFamily: "me_quran")),
         
         
                 },
