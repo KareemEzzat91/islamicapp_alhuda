@@ -1,0 +1,653 @@
+[
+    {
+        "part": 1,
+        "ayahs": 184,
+        "startAyah": 1,
+        "endAyah": 184,
+        "surahs": [
+            "الفاتحة",
+            "البقرة"
+        ],
+        "startSurah": "الفاتحة",
+        "endSurah": "البقرة",
+        "hizbs": [
+            {
+                "hizb": 1,
+                "startAyah": 1,
+                "startSurahAyah": {
+                    "surah": "الفاتحة",
+                    "ayah": 1
+                },
+                "endAyah": 93,
+                "endSurahAyah": {
+                    "surah": "البقرة",
+                    "ayah": 93
+                },
+                "quarters": [
+                    {
+                        "quarter": 1,
+                        "startAyah": 1,
+                        "endAyah": 25,
+                        "startSurahAyah": {
+                            "surah": "الفاتحة",
+                            "ayah": 1
+                        },
+                        "endSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 25
+                        }
+                    },
+                    {
+                        "quarter": 2,
+                        "startAyah": 26,
+                        "endAyah": 50,
+                        "startSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 26
+                        },
+                        "endSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 50
+                        }
+                    },
+                    {
+                        "quarter": 3,
+                        "startAyah": 51,
+                        "endAyah": 75,
+                        "startSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 51
+                        },
+                        "endSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 75
+                        }
+                    },
+                    {
+                        "quarter": 4,
+                        "startAyah": 76,
+                        "endAyah": 93,
+                        "startSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 76
+                        },
+                        "endSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 93
+                        }
+                    }
+                ]
+            },
+            {
+                "hizb": 2,
+                "startAyah": 94,
+                "startSurahAyah": {
+                    "surah": "البقرة",
+                    "ayah": 94
+                },
+                "endAyah": 184,
+                "endSurahAyah": {
+                    "surah": "البقرة",
+                    "ayah": 184
+                },
+                "quarters": [
+                    {
+                        "quarter": 5,
+                        "startAyah": 94,
+                        "endAyah": 117,
+                        "startSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 94
+                        },
+                        "endSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 117
+                        }
+                    },
+                    {
+                        "quarter": 6,
+                        "startAyah": 118,
+                        "endAyah": 141,
+                        "startSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 118
+                        },
+                        "endSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 141
+                        }
+                    },
+                    {
+                        "quarter": 7,
+                        "startAyah": 142,
+                        "endAyah": 163,
+                        "startSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 142
+                        },
+                        "endSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 163
+                        }
+                    },
+                    {
+                        "quarter": 8,
+                        "startAyah": 164,
+                        "endAyah": 184,
+                        "startSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 164
+                        },
+                        "endSurahAyah": {
+                            "surah": "البقرة",
+                            "ayah": 184
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "part": 2,
+        "ayahs": 111,
+        "startAyah": 185,
+        "endAyah": 295,
+        "surahs": ["البقرة", "آل عمران"],
+        "startSurah": "البقرة",
+        "endSurah": "آل عمران",
+        "hizbs": [
+            {
+                "hizb": 3,
+                "startAyah": 185,
+                "startSurahAyah": {"surah": "البقرة", "ayah": 142},
+                "endAyah": 238,
+                "endSurahAyah": {"surah": "البقرة", "ayah": 202},
+                "quarters": [
+                    {
+                        "quarter": 1,
+                        "startAyah": 185,
+                        "startSurahAyah": {"surah": "البقرة", "ayah": 142},
+                        "endAyah": 211,
+                        "endSurahAyah": {"surah": "البقرة", "ayah": 170}
+                    },
+                    {
+                        "quarter": 2,
+                        "startAyah": 212,
+                        "startSurahAyah": {"surah": "البقرة", "ayah": 171},
+                        "endAyah": 238,
+                        "endSurahAyah": {"surah": "البقرة", "ayah": 202}
+                    }
+                ]
+            },
+            {
+                "hizb": 4,
+                "startAyah": 239,
+                "startSurahAyah": {"surah": "البقرة", "ayah": 203},
+                "endAyah": 295,
+                "endSurahAyah": {"surah": "آل عمران", "ayah": 8},
+                "quarters": [
+                    {
+                        "quarter": 3,
+                        "startAyah": 239,
+                        "startSurahAyah": {"surah": "البقرة", "ayah": 203},
+                        "endAyah": 267,
+                        "endSurahAyah": {"surah": "البقرة", "ayah": 231}
+                    },
+                    {
+                        "quarter": 4,
+                        "startAyah": 268,
+                        "startSurahAyah": {"surah": "البقرة", "ayah": 232},
+                        "endAyah": 295,
+                        "endSurahAyah": {"surah": "آل عمران", "ayah": 8}
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "part": 3,
+        "ayahs": 125,
+        "startAyah": 296,
+        "endAyah": 420,
+        "surahs": ["آل عمران", "النساء"],
+        "startSurah": "آل عمران",
+        "endSurah": "النساء",
+        "hizbs": [
+            {
+                "hizb": 5,
+                "startAyah": 296,
+                "startSurahAyah": {"surah": "آل عمران", "ayah": 9},
+                "endAyah": 365,
+                "endSurahAyah": {"surah": "آل عمران", "ayah": 78},
+                "quarters": [
+                    {
+                        "quarter": 1,
+                        "startAyah": 296,
+                        "startSurahAyah": {"surah": "آل عمران", "ayah": 9},
+                        "endAyah": 330,
+                        "endSurahAyah": {"surah": "آل عمران", "ayah": 42}
+                    },
+                    {
+                        "quarter": 2,
+                        "startAyah": 331,
+                        "startSurahAyah": {"surah": "آل عمران", "ayah": 43},
+                        "endAyah": 365,
+                        "endSurahAyah": {"surah": "آل عمران", "ayah": 78}
+                    }
+                ]
+            },
+            {
+                "hizb": 6,
+                "startAyah": 366,
+                "startSurahAyah": {"surah": "آل عمران", "ayah": 79},
+                "endAyah": 420,
+                "endSurahAyah": {"surah": "النساء", "ayah": 23},
+                "quarters": [
+                    {
+                        "quarter": 3,
+                        "startAyah": 366,
+                        "startSurahAyah": {"surah": "آل عمران", "ayah": 79},
+                        "endAyah": 395,
+                        "endSurahAyah": {"surah": "النساء", "ayah": 10}
+                    },
+                    {
+                        "quarter": 4,
+                        "startAyah": 396,
+                        "startSurahAyah": {"surah": "النساء", "ayah": 11},
+                        "endAyah": 420,
+                        "endSurahAyah": {"surah": "النساء", "ayah": 23}
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "part": 4,
+        "ayahs": 132,
+        "startAyah": 421,
+        "endAyah": 552,
+        "surahs": ["النساء"],
+        "startSurah": "النساء",
+        "endSurah": "النساء",
+        "hizbs": [
+            {
+                "hizb": 7,
+                "startAyah": 421,
+                "startSurahAyah": {"surah": "النساء", "ayah": 24},
+                "endAyah": 486,
+                "endSurahAyah": {"surah": "النساء", "ayah": 89},
+                "quarters": [
+                    {
+                        "quarter": 1,
+                        "startAyah": 421,
+                        "startSurahAyah": {"surah": "النساء", "ayah": 24},
+                        "endAyah": 454,
+                        "endSurahAyah": {"surah": "النساء", "ayah": 57}
+                    },
+                    {
+                        "quarter": 2,
+                        "startAyah": 455,
+                        "startSurahAyah": {"surah": "النساء", "ayah": 58},
+                        "endAyah": 486,
+                        "endSurahAyah": {"surah": "النساء", "ayah": 89}
+                    }
+                ]
+            },
+            {
+                "hizb": 8,
+                "startAyah": 487,
+                "startSurahAyah": {"surah": "النساء", "ayah": 90},
+                "endAyah": 552,
+                "endSurahAyah": {"surah": "النساء", "ayah": 176},
+                "quarters": [
+                    {
+                        "quarter": 3,
+                        "startAyah": 487,
+                        "startSurahAyah": {"surah": "النساء", "ayah": 90},
+                        "endAyah": 519,
+                        "endSurahAyah": {"surah": "النساء", "ayah": 122}
+                    },
+                    {
+                        "quarter": 4,
+                        "startAyah": 520,
+                        "startSurahAyah": {"surah": "النساء", "ayah": 123},
+                        "endAyah": 552,
+                        "endSurahAyah": {"surah": "النساء", "ayah": 176}
+                    }
+                ]
+            }
+        ]
+    },
+
+    {
+        "part": 5,
+        "ayahs": 124,
+        "startAyah": 553,
+        "endAyah": 676,
+        "surahs": ["النساء", "المائدة"],
+        "startSurah": "النساء",
+        "endSurah": "المائدة",
+        "hizbs": 2,
+        "quarters": 4,
+        "hizbDetails": [
+            {
+                "hizb": 1,
+                "startAyah": 553,
+                "endAyah": 623,
+                "startSurah": "النساء",
+                "endSurah": "النساء",
+                "startAyahNumber": 1,
+                "endAyahNumber": 70
+            },
+            {
+                "hizb": 2,
+                "startAyah": 624,
+                "endAyah": 676,
+                "startSurah": "النساء",
+                "endSurah": "المائدة",
+                "startAyahNumber": 71,
+                "endAyahNumber": 124
+            }
+        ]
+    },
+    {
+        "part": 6,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 7,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 8,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 9,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 10,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 11,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 12,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 13,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 14,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 15,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 16,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 17,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 18,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 19,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 20,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 21,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 22,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 23,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 24,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 25,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 26,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 27,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 28,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 29,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    },
+    {
+        "part": 30,
+        "ayahs": 0,
+        "startAyah": 0,
+        "endAyah": 0,
+        "surahs": [
+            "..."
+        ],
+        "startSurah": "...",
+        "endSurah": "...",
+        "hizbs": []
+    }
+]

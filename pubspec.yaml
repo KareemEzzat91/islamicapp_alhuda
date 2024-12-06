@@ -39,6 +39,7 @@ dependencies:
   flutter_bloc: ^8.1.6
   bloc: ^8.1.4
 
+  just_audio: ^0.9.42
 
   flutter_localizations:
     sdk: flutter

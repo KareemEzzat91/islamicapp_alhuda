@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islamicapp_alhuda/Screens/HomeScreen/HomeScreencubit/homescreen_cubit.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import 'Arabicsurahnum.dart';
-import 'SurahModel.dart';
-import '../kconst/kcons.dart';
+ import 'SurahModel.dart';
 
 final ItemScrollController itemScrollController = ItemScrollController();
 final ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
@@ -19,10 +19,36 @@ class SurahBuilder extends StatefulWidget {
   @override
   State<SurahBuilder> createState() => _SurahBuilderState();
 }
+int num=1 ;
 
 class _SurahBuilderState extends State<SurahBuilder> {
   bool viewFullSurah = false;
+ final _audioPlayer = AudioPlayer();
+  Future<void> playPrimaryAudio(url) async {
+    try {
+      await _audioPlayer.setUrl(url);
+      _audioPlayer.play();
+    } catch (e) {
+      print("Error playing audio: $e");
+    }
+  }
+  Future<void> PlayAllSurah(Surah surah) async {
+    for (final ayah in surah.ayahs) {
+      try {
+        await _audioPlayer.setUrl(ayah.audioSecondary.first);
+        _audioPlayer.play();
 
+         await _audioPlayer.playerStateStream
+            .firstWhere((state) => state.processingState == ProcessingState.completed);
+         setState(() {
+           num++;
+         });
+      } catch (e) {
+        print("Error playing audio: $e");
+      }
+    }
+    num=1;
+  }
 
   @override
   void initState() {
@@ -57,6 +83,7 @@ class _SurahBuilderState extends State<SurahBuilder> {
               fontWeight: FontWeight.bold,
             ),
           ),
+          centerTitle: true,
           backgroundColor: Colors.teal,
           actions: [
             IconButton(
@@ -68,6 +95,10 @@ class _SurahBuilderState extends State<SurahBuilder> {
               },
             ),
           ],
+          leading: IconButton(onPressed: ()async{
+            await PlayAllSurah(widget.surah);
+
+          }, icon: Icon(Icons.play_circle)),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -83,10 +114,11 @@ class _SurahBuilderState extends State<SurahBuilder> {
                      ayah.numberInSurah ==1 && widget.surah.number!=9 ?const WidgetSpan(child: BasmalaWidget()):const TextSpan(text: ""),
                       TextSpan(
                         text: ayah.numberInSurah ==1 && widget.surah.number!=9? ayah.text.replaceRange(0, 39, ""):ayah.text,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 23,
-                          fontFamily: 'Amiri',
-                          color: Colors.black,
+                          fontFamily: 'me_quran',
+                          color:   num ==ayah.number?Colors.red:
+                          Colors.black,
                           height: 2.0,
                         ),
                       ),
@@ -122,11 +154,17 @@ class _SurahBuilderState extends State<SurahBuilder> {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         if (index == 0 && widget.surah.number != 9) const BasmalaWidget(),
-        verseBuilder(
-          index == 0 && widget.surah.number != 9
-              ? ayah.text.replaceRange(0, 39, "")
-              : ayah.text,
-          ayah.numberInSurah,
+        GestureDetector(
+          onDoubleTap: ()async{
+           await playPrimaryAudio(ayah.audioSecondary.first);
+
+          },
+          child: verseBuilder(
+            index == 0 && widget.surah.number != 9
+                ? ayah.text.replaceRange(0, 39, "")
+                : ayah.text,
+            ayah.numberInSurah,
+          ),
         ),
       ],
     );
@@ -142,10 +180,10 @@ class _SurahBuilderState extends State<SurahBuilder> {
           Text(
             text,
             textDirection: TextDirection.rtl,
-            style: const TextStyle(
+            style:  TextStyle(
               fontSize: 22,
-              fontFamily: 'Amiri',
-              color: Color(0xFF333333),
+              fontFamily: 'me_quran',
+              color:  num ==index? Colors.red:Color(0xFF333333),
             ),
           ),
           Container(
@@ -159,7 +197,7 @@ class _SurahBuilderState extends State<SurahBuilder> {
               index.toString(),
               style: const TextStyle(
                 fontSize: 16,
-                fontFamily: 'Amiri',
+                fontFamily: 'me_quran',
                 fontWeight: FontWeight.bold,
                 color: Colors.teal,
               ),

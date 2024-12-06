@@ -29,6 +29,8 @@ class Surah {
 
 class Ayah {
   int number;
+  String audio ;
+  List audioSecondary ;
   String text;
   int numberInSurah;
   int juz;
@@ -40,6 +42,8 @@ class Ayah {
 
   Ayah({
     required this.number,
+    required this.audio,
+    required this.audioSecondary,
     required this.text,
     required this.numberInSurah,
     required this.juz,
@@ -53,6 +57,8 @@ class Ayah {
   factory Ayah.fromJson(Map<String, dynamic> json) {
     return Ayah(
       number: json['number'],
+      audio: 'audio',
+      audioSecondary: List<String>.from(json['audioSecondary']),
       text: json['text'],
       numberInSurah: json['numberInSurah'],
       juz: json['juz'],
@@ -60,7 +66,7 @@ class Ayah {
       page: json['page'],
       ruku: json['ruku'],
       hizbQuarter: json['hizbQuarter'],
-      sajda: json['sajda'] is bool ? json['sajda'] : false,  // التعامل مع `sajda` بشكل مرن
+      sajda: json['sajda'] is bool ? json['sajda'] : false,
     );
   }
 }

@@ -7,7 +7,7 @@ import '../kconst/kcons.dart';
 
 Future<void> loadQuranData() async {
   try {
-    final String response = await rootBundle.loadString('assets/Fonts/quran-uthmani.json');
+    final String response = await rootBundle.loadString('assets/Fonts/ar.alafasy');
     final Map<String, dynamic> data = json.decode(response);
 
     print("تحميل البيانات...");
