@@ -1,12 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islamicapp_alhuda/Screens/HomeScreen/HomeScreencubit/homescreen_cubit.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-
-import 'Arabicsurahnum.dart';
- import 'SurahModel.dart';
+ import 'Arabicsurahnum.dart';
+import 'SurahModel.dart';
 
 final ItemScrollController itemScrollController = ItemScrollController();
 final ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
@@ -19,9 +17,11 @@ class SurahBuilder extends StatefulWidget {
   @override
   State<SurahBuilder> createState() => _SurahBuilderState();
 }
-int num=1 ;
+int num=0 ;
+
 
 class _SurahBuilderState extends State<SurahBuilder> {
+  bool playicon=false;
   bool viewFullSurah = false;
  final _audioPlayer = AudioPlayer();
   Future<void> playPrimaryAudio(url) async {
@@ -35,19 +35,24 @@ class _SurahBuilderState extends State<SurahBuilder> {
   Future<void> PlayAllSurah(Surah surah) async {
     for (final ayah in surah.ayahs) {
       try {
-        await _audioPlayer.setUrl(ayah.audioSecondary.first);
+        await _audioPlayer.setUrl(surah.ayahs[num].audioSecondary.first);
         _audioPlayer.play();
 
-         await _audioPlayer.playerStateStream
-            .firstWhere((state) => state.processingState == ProcessingState.completed);
-         setState(() {
-           num++;
-         });
+         await _audioPlayer.playerStateStream.firstWhere((state) => state.processingState == ProcessingState.completed);
+        setState(() {
+          num++;
+        });
+        if (!playicon ){
+          return;
+        }
+
+
       } catch (e) {
         print("Error playing audio: $e");
       }
     }
-    num=1;
+    num=0;
+    playicon=false;
   }
 
   @override
@@ -96,9 +101,15 @@ class _SurahBuilderState extends State<SurahBuilder> {
             ),
           ],
           leading: IconButton(onPressed: ()async{
-            await PlayAllSurah(widget.surah);
+            setState(() {
+              playicon?playicon=false :playicon=true;
+            });
+            playicon?  await PlayAllSurah(widget.surah):null ;//else stop
 
-          }, icon: Icon(Icons.play_circle)),
+            // playicon =true  Play
+            //
+
+          }, icon:playicon?const Icon(Icons.pause):const Icon(Icons.play_circle)),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -109,6 +120,7 @@ class _SurahBuilderState extends State<SurahBuilder> {
                 children: widget.surah.ayahs.map((ayah) {
 
                   return TextSpan(
+                    locale: Locale("ar"),
                     children: [
                       // نص الآية
                      ayah.numberInSurah ==1 && widget.surah.number!=9 ?const WidgetSpan(child: BasmalaWidget()):const TextSpan(text: ""),
@@ -117,14 +129,14 @@ class _SurahBuilderState extends State<SurahBuilder> {
                         style: TextStyle(
                           fontSize: 23,
                           fontFamily: 'me_quran',
-                          color:   num ==ayah.number?Colors.red:
+                          color:  num+1 ==ayah.number?Colors.red:
                           Colors.black,
                           height: 2.0,
                         ),
                       ),
                       const WidgetSpan(child: SizedBox(width: 5,)),
                       // رقم الآية داخل دائرةs
-                       WidgetSpan( alignment: PlaceholderAlignment.bottom,child: ArabicSuraNumber(i:ayah.numberInSurah,)),
+                       WidgetSpan( alignment: PlaceholderAlignment.bottom,child:ArabicSuraNumber(i:ayah.numberInSurah,)),
                       const WidgetSpan(child: SizedBox(width: 5,)),
                     ],
                   );
@@ -183,7 +195,7 @@ class _SurahBuilderState extends State<SurahBuilder> {
             style:  TextStyle(
               fontSize: 22,
               fontFamily: 'me_quran',
-              color:  num ==index? Colors.red:Color(0xFF333333),
+              color:  num+1 ==index? Colors.red:Color(0xFF333333),
             ),
           ),
           Container(

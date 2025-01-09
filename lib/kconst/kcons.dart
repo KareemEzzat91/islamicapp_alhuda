@@ -255,6 +255,6 @@ final List<Map<String, dynamic>> quranParts = [
   },
 ];
 
-List<dynamic> quran=[];
+List<dynamic> alquran=[];
 List <Surah> Sur=[];
 

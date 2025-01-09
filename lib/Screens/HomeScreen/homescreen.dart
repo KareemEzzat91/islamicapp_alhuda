@@ -6,6 +6,7 @@ import 'package:islamicapp_alhuda/Screens/HomeScreen/Hijb/Hijbwidget.dart';
 import 'package:islamicapp_alhuda/Screens/HomeScreen/Pagewidget/Pagewidget.dart';
 import 'package:islamicapp_alhuda/Screens/HomeScreen/Parawidget/Parawidget.dart';
 
+import '../../Adhan/adhantest.dart';
 import '../../generated/l10n.dart';
 import 'HomeScreencubit/homescreen_cubit.dart';
 import 'Surahwidget/surahwidget.dart';
@@ -23,7 +24,7 @@ class _homeScreenState extends State<homeScreen> {
     List Screens =[
       const surahwidget (),
       const Parawidget(),
-      const Pagewidget(),
+      const AdhanTest(),
       const hijbwidget(),
     ];
     return Scaffold(
@@ -130,7 +131,7 @@ class _homeScreenState extends State<homeScreen> {
                 },
               ),
               const Divider(),
-              Container(child:   Screens[index] )
+              Container(child:   Screens[index]??SingleChildScrollView() )
         
         
             ],

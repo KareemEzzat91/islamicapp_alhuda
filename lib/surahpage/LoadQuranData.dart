@@ -11,10 +11,10 @@ Future<void> loadQuranData() async {
     final Map<String, dynamic> data = json.decode(response);
 
     print("تحميل البيانات...");
-    quran = data['data']["surahs"];
+    alquran = data['data']["surahs"];
 
     // تحويل كل عنصر إلى كائن من النوع Surah
-    quran.forEach((surah1) {
+    alquran.forEach((surah1) {
       final surah = Surah.fromJson(surah1);
       Sur.add(surah); // إضافة الكائن إلى القائمة النهائية.
       print(surah.ayahs.length);  // طباعة السورة للتأكد.
