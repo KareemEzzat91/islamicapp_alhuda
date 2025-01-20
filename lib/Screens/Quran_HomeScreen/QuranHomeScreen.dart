@@ -86,7 +86,7 @@ class _QuranHomeScreenState extends State<QuranHomeScreen> {
                       ),
                     ),
                     Positioned(
-                      left: 10,
+                      left: 0,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -97,14 +97,14 @@ class _QuranHomeScreenState extends State<QuranHomeScreen> {
                                 Icon(
                                   Icons.menu_book_outlined,
                                   color: Colors.white,
-                                  size: 20,
+                                  size: 17,
                                   textDirection: TextDirection.ltr,
                                 ),
-                                SizedBox(width: 10,),
+                                SizedBox(width: 12,),
                                 Text(
                                   S.of(context).LastRead,
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 17,
                                     color: Colors.white,
                                     fontFamily: "me_quran",
                                   ),
