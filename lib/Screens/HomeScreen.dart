@@ -38,23 +38,23 @@ class _HomescreenState extends State<Homescreen> {
         items: [
           FlashyTabBarItem(
             icon: Icon(Icons.menu_book_rounded),
-            title: Text("Quran".trim()),
+            title: Text("القرآن".trim()),
           ),
           FlashyTabBarItem(
             icon: Icon(Icons.clean_hands_outlined),
-            title: Text("Azkar".trim()),
+            title: Text("الأذكار".trim()),
           ),
           FlashyTabBarItem(
             icon: Icon(Icons.emoji_people_outlined),
-            title: Text("Salah".trim()),
+            title: Text("الصلاة".trim()),
           ),
           FlashyTabBarItem(
             icon: Icon(Icons.calendar_month_rounded),
-            title: Text("Calendar".trim()),
+            title: Text("التقويم".trim()),
           ),
           FlashyTabBarItem(
             icon: Icon(Icons.settings),
-            title: Text("Settings".trim()),
+            title: Text("الإعدادات".trim()),
           ),
         ],
       ),
