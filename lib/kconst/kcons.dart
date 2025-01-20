@@ -257,4 +257,5 @@ final List<Map<String, dynamic>> quranParts = [
 
 List<dynamic> alquran=[];
 List <Surah> Sur=[];
-
+List <Adhkar> Azkar = [];
+List <Array> D3aa = [];

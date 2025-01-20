@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islamicapp_alhuda/Screens/HomeScreen/HomeScreencubit/homescreen_cubit.dart';
-import 'package:islamicapp_alhuda/surahpage/SurahModel.dart';
 import '../../../kconst/kcons.dart';
 import '../../../surahpage/surahBuilder.dart';
+import '../HomeScreencubit/homescreen_cubit.dart';
 
 class surahwidget extends StatelessWidget {
   const surahwidget({super.key});

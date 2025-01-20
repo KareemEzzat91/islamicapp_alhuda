@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islamicapp_alhuda/Screens/HomeScreen/HomeScreencubit/homescreen_cubit.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
- import 'Arabicsurahnum.dart';
+ import '../Screens/Quran_HomeScreen/HomeScreencubit/homescreen_cubit.dart';
+import 'Arabicsurahnum.dart';
 import 'SurahModel.dart';
 
 final ItemScrollController itemScrollController = ItemScrollController();

@@ -1,8 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:islamicapp_alhuda/Screens/HomeScreen.dart';
 import 'package:lottie/lottie.dart';
 
-import '../HomeScreen/homescreen.dart';
 
 class splashscreen extends StatelessWidget {
   const splashscreen({super.key});
@@ -20,7 +20,7 @@ class splashscreen extends StatelessWidget {
           ),
         ],
       ),
-      nextScreen:const homeScreen() ,
+      nextScreen:const Homescreen() ,
       duration: 5000,
       splashIconSize: 850,
       backgroundColor: CupertinoColors.white,

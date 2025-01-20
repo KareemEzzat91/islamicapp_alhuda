@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../kconst/kcons.dart';
-import '../../../surahpage/surahBuilder.dart';
 import '../HomeScreencubit/homescreen_cubit.dart';
 import 'QuranPartDetailsScreen.dart';
 
